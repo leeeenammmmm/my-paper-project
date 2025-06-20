@@ -1,18 +1,16 @@
-name: ShellCheck
+on:
+  push:
+    branches:
+      - main
 
-on: [push, pull_request]
+name: "Trigger: Push action"
+permissions: {}
 
 jobs:
-  lint:
+  shellcheck:
+    name: Shellcheck
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
-
-      - name: Install shellcheck
-        run: sudo apt-get update && sudo apt-get install -y shellcheck
-
-      - name: Run shellcheck on all .sh files
-        run: |
-          find . -name "*.sh" -print0 | xargs -0 shellcheck || exit 1
-
+      - uses: actions/checkout@v4
+      - name: Run ShellCheck
+        uses: ludeeus/action-shellcheck@master
