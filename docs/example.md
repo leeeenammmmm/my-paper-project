@@ -1,8 +1,4 @@
-# Example Document
 
-This document is written clearly and concisely.
+This is very very really really good. Just good.
 
-It avoids unnecessary repetition or passive voice.
-
-Thanks for reading.
-
+We basically kind of try to make it work in a sort of way.
